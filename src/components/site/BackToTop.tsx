@@ -1,8 +1,28 @@
 "use client";
 
 import type { MouseEvent } from "react";
+import { useEffect, useState } from "react";
 
 export function BackToTop() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const updateVisibility = () => {
+      const hero = document.querySelector<HTMLElement>(".hero-shell");
+      const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : window.innerHeight;
+      setIsVisible(window.scrollY >= heroBottom - 80);
+    };
+
+    updateVisibility();
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    window.addEventListener("resize", updateVisibility, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", updateVisibility);
+      window.removeEventListener("resize", updateVisibility);
+    };
+  }, []);
+
   const handleBackToTop = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
 
@@ -43,7 +63,7 @@ export function BackToTop() {
       href="#top"
       aria-label="Back to top"
       onClick={handleBackToTop}
-      className="back-to-top is-visible"
+      className={`back-to-top ${isVisible ? "is-visible" : ""}`}
     >
       <svg
         aria-hidden="true"
