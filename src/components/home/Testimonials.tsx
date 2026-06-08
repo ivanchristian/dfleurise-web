@@ -1,7 +1,7 @@
 const testimonials = [
-  ["The bouquet looked even softer and more premium in person. Perfect for my sister's birthday.", "Nadia"],
-  ["Beautiful wrapping, fast response, and the colors were exactly what I imagined.", "Clara"],
-  ["d'fleurise made our anniversary flowers feel personal and very elegant.", "Michelle"],
+  ["The bouquet looked even softer and more premium in person. Perfect for my sister's birthday.", "Michelle"],
+  ["Beautiful wrapping, fast response, and the colors were exactly what I imagined.", "Stephanie"],
+  ["d'fleurise made our anniversary flowers feel personal and very elegant.", "Melissa"],
 ];
 
 export function Testimonials() {

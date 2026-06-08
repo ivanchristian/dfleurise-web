@@ -91,6 +91,12 @@ body::before {
   z-index: 1;
 }
 
+.nav-link {
+  color: rgba(86, 52, 60, 0.92);
+  font-weight: 650;
+  text-shadow: 0 2px 14px rgba(255, 250, 248, 0.84);
+}
+
 .site-header.is-solid {
   border-bottom: 1px solid rgba(240, 213, 220, 0.95);
   background: #fffaf8;
@@ -353,6 +359,10 @@ a {
   text-transform: uppercase;
   color: rgba(42, 27, 31, 0.68);
   text-shadow: 0 8px 22px rgba(255, 250, 248, 0.8);
+}
+
+.hero-mobile-note {
+  display: none;
 }
 
 .hero-metrics {
@@ -689,13 +699,83 @@ figure:hover {
 }
 
 @media (max-width: 767px) {
+  .site-header nav {
+    justify-content: center !important;
+    padding-top: 1rem;
+    padding-bottom: 0.45rem;
+  }
+
+  .site-header .nav-cta {
+    display: none !important;
+  }
+
+  .site-header nav a[aria-label="d'fleurise home"] {
+    margin-inline: auto;
+  }
+
+  .site-header nav img {
+    width: 175px;
+    height: auto;
+  }
+
+  .site-header > div:not(.site-header-bg) {
+    justify-content: center !important;
+    gap: clamp(1rem, 5vw, 1.55rem) !important;
+    overflow-x: hidden;
+    padding-inline: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .site-header > div:not(.site-header-bg) a {
+    color: rgba(86, 52, 60, 0.92);
+    font-size: 0.98rem;
+    font-weight: 650;
+    text-shadow: 0 2px 14px rgba(255, 250, 248, 0.9);
+  }
+
   .section-heading {
     align-items: start;
     flex-direction: column;
   }
 
   .hero-grid {
-    padding-top: 7rem;
+    align-items: start;
+    min-height: 100svh;
+    padding-top: 15.5rem;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(4rem, 15vw, 5rem);
+  }
+
+  .hero-copy .btn-primary,
+  .hero-copy .btn-secondary {
+    width: 100%;
+  }
+
+  .hero-whatsapp-cta {
+    display: inline-flex !important;
+  }
+
+  .hero-mobile-note {
+    display: flex;
+    justify-content: center;
+    gap: 0.9rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(216, 107, 131, 0.26);
+    border-bottom: 1px solid rgba(216, 107, 131, 0.18);
+    padding-block: 0.75rem;
+    color: rgba(42, 27, 31, 0.62);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-shadow: 0 8px 22px rgba(255, 250, 248, 0.8);
   }
 
   .hero-metrics {
@@ -721,6 +801,18 @@ figure:hover {
     left: 1rem;
     min-height: 3.1rem;
     padding-inline: 0.85rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .site-header .nav-cta {
+    display: none !important;
+  }
+
+  .hero-grid .hero-side-note {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
 }
 
