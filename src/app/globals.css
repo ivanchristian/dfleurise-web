@@ -97,6 +97,49 @@ body::before {
   text-shadow: 0 2px 14px rgba(255, 250, 248, 0.84);
 }
 
+.nav-editorial {
+  position: absolute !important;
+  top: 1.85rem;
+  left: clamp(3rem, 5vw, 6rem);
+  z-index: 2;
+  align-items: center;
+  
+  /* 1. Aktifkan gap kecil di sini sesuai selera */
+  display: none; /* desktop-only; enabled again at xl */
+  gap: 0.5rem;   /* atur kedekatannya di sini (misal: 0.5rem atau 8px) */
+  
+  color: rgba(86, 52, 60, 0.74);
+  font-size: 0.4rem;
+  font-weight: 800;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 14px rgba(255, 250, 248, 0.86);
+  white-space: nowrap;
+}
+
+.nav-editorial span:last-child {
+  font-size: 0;
+}
+
+.nav-editorial span:last-child::after {
+  content: "D'FLEURISE FLORIST \00B7  EST. TANGERANG";
+  font-size: 0.55rem;
+}
+
+.nav-editorial-line {
+  display: block;
+  flex-shrink: 0; /* Mencegah garis gepeng/menyusut */
+  margin-right: -8rem; /* Menghilangkan efek 'space' bawaan dari letter-spacing container */
+  width: 1.4rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pink), var(--rose));
+  box-shadow: 0 0 18px rgba(239, 120, 150, 0.34);
+}
+
+.nav-editorial-mobile {
+  display: none;
+}
+
 .site-header.is-solid {
   border-bottom: 1px solid rgba(240, 213, 220, 0.95);
   background: #fffaf8;
@@ -641,9 +684,9 @@ figure:hover {
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.12em;
-  opacity: 0.82;
+  opacity: 0;
   padding: 0.7rem 1rem;
-  pointer-events: auto;
+  pointer-events: none;
   text-transform: uppercase;
   transform: translateY(1rem);
   transition:
@@ -732,7 +775,7 @@ figure:hover {
   .site-header nav {
     justify-content: center !important;
     padding-top: 1rem;
-    padding-bottom: 0.45rem;
+    padding-bottom: 0.75rem;
   }
 
   .site-header .nav-cta {
@@ -743,9 +786,39 @@ figure:hover {
     margin-inline: auto;
   }
 
+  .nav-brand-group {
+    flex-direction: column;
+    gap: 0;
+    justify-content: center;
+    width: 100%;
+  }
+
   .site-header nav img {
     width: 175px;
     height: auto;
+  }
+
+  .nav-editorial-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    max-width: min(92vw, 28rem);
+    color: rgba(86, 52, 60, 0.78);
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 2px 14px rgba(255, 250, 248, 0.9);
+    transform: translateY(-0.35rem);
+    white-space: nowrap;
+  }
+
+  .nav-editorial-mobile .nav-editorial-line {
+    width: 1.75rem;
+    flex: 0 0 1.75rem;
+    margin-right: 0;
   }
 
   .site-header > div:not(.site-header-bg) {
@@ -828,9 +901,39 @@ figure:hover {
   }
 }
 
+@media (max-width: 1279px) {
+  .site-header > .nav-editorial {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .site-header > .nav-editorial {
+    display: flex !important;
+  }
+}
+
 @media (min-width: 1024px) {
+  .hero-grid {
+    align-items: center;
+    max-width: none;
+    padding-left: clamp(3rem, 5vw, 6rem);
+    padding-right: clamp(3rem, 5vw, 6rem);
+  }
+
+  .hero-copy {
+    max-width: min(48rem, 52vw);
+  }
+
+  .hero-side-note {
+    right: clamp(2rem, 3vw, 4rem);
+    top: 50%;
+  }
+
   .hero-metrics {
-    left: 50%;
+    left: clamp(3rem, 5vw, 6rem);
+    bottom: 3.4rem;
+    transform: none;
   }
 }
 

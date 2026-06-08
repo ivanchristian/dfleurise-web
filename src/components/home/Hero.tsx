@@ -21,7 +21,7 @@ export function Hero() {
           <p className="section-label hero-label">Luxury florist in Karawaci</p>
           <h1 className="mt-5 max-w-4xl font-serif text-6xl leading-[0.92] text-[var(--foreground)] sm:text-7xl lg:text-8xl">
             <span className="block">Love Expressed</span>
-            <span className="block">In Blooms</span>
+            <span className="block">In <span className="italic text-[var(--pink-soft)]">Blooms</span></span>
           </h1>
           <p className="mt-7 max-w-xl border-l border-[var(--pink-soft)] pl-5 text-lg leading-8 text-[var(--muted)]">
             Luxury handcrafted bouquets designed for life&apos;s most meaningful moments.
@@ -54,9 +54,9 @@ export function Hero() {
           <div>
             <strong>5.0</strong>
             <span>Ratings</span>
-          </div>
+          </div>  
           <div>
-            <strong>Instant</strong>
+            <strong>Same Day</strong>
             <span>Delivery</span>
           </div>
         </div>

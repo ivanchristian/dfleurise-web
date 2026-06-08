@@ -21,24 +21,26 @@ export function Navbar() {
   return (
     <header className={`site-header ${isHome ? "home-header" : "is-solid"}`}>
       <div className="site-header-bg" aria-hidden="true" />
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-2 sm:px-8">
-        <Link href="/" className="shrink-0" aria-label="d'fleurise home">
-          <Image
-            src="/assets/logo.png"
-            alt="d'fleurise logo"
-            width={180}
-            height={60}
-            priority
-          />
-          {/* 
-          <span className="block font-serif text-2xl leading-none text-[var(--foreground)] transition-colors hover:text-[var(--rose)]">
-            d&apos;fleurise
-          </span>
-          <span className="block text-[10px] font-semibold uppercase tracking-[0.32em] text-[var(--rose)]">
-            Florist
-          </span>
-          */}
-        </Link>
+      <div className="nav-editorial hidden xl:flex" aria-hidden="true">
+        <span className="nav-editorial-line" />
+        <span>D&apos;FLEURISE FLORIST · EST. TANGERANG</span>
+      </div>
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-8 py-2 sm:px-12">
+        <div className="nav-brand-group flex shrink-0 items-center gap-7">
+          <Link href="/" className="shrink-0" aria-label="d'fleurise home">
+            <Image
+              src="/assets/logo.png"
+              alt="d'fleurise logo"
+              width={180}
+              height={60}
+              priority
+            />
+          </Link>
+          <div className="nav-editorial-mobile" aria-hidden="true">
+            <span className="nav-editorial-line" />
+            <span>D&apos;FLEURISE FLORIST &middot; EST. TANGERANG</span>
+          </div>
+        </div>
         <div className="hidden items-center gap-8 lg:flex">
           {navItems.map(([label, href]) => (
             <Link
