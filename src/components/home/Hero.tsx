@@ -27,8 +27,9 @@ export function Hero() {
             Luxury handcrafted bouquets designed for life&apos;s most meaningful moments.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link className="btn-primary" href="/collections">
-              Explore Collections
+            <Link className="btn-primary hero-explore-cta" href="/collections">
+              <span>Explore Collections</span>
+              <span aria-hidden="true">-&gt;</span>
             </Link>
             <a className="btn-secondary hero-whatsapp-cta" href={whatsappUrl} target="_blank" rel="noreferrer">
               Order via WhatsApp
