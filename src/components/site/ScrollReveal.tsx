@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const revealSelector = [
   ".section-wrap",
-  ".hero-grid > *",
+  ".hero-copy",
   ".section-heading",
   ".image-card",
   "article",

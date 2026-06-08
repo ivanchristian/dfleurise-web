@@ -324,11 +324,14 @@ a {
 
 .hero-side-note {
   position: absolute;
-  right: 5rem;
-  top: 50%;
+  right: clamp(3rem, 7vw, 6.5rem);
+  top: 46%;
   display: flex;
   align-items: center;
-  gap: 1.05rem;
+  justify-content: center;
+  gap: 0.95rem;
+  height: clamp(18rem, 38vh, 23rem);
+  animation: soft-appear 1100ms ease both 520ms;
   transform: translateY(-50%);
   writing-mode: vertical-rl;
 }
@@ -337,7 +340,8 @@ a {
 .hero-side-note::after {
   display: block;
   width: 1px;
-  height: 5rem;
+  height: 4.35rem;
+  flex: 0 0 4.35rem;
   content: "";
   background: linear-gradient(180deg, transparent, rgba(216, 107, 131, 0.82), transparent);
 }
@@ -358,6 +362,7 @@ a {
   display: flex;
   align-items: end;
   gap: 2.4rem;
+  animation: soft-appear 1100ms ease both 620ms;
   transform: translateX(-50%);
 }
 
@@ -550,12 +555,12 @@ a {
   transform: translate3d(0, 0, 0);
 }
 
-.hero-grid h1 {
+.hero-copy h1 {
   animation: editorial-rise 1180ms cubic-bezier(0.18, 0.8, 0.22, 1) both 160ms;
 }
 
-.hero-grid p,
-.hero-grid a {
+.hero-copy p,
+.hero-copy a {
   animation: editorial-rise 1180ms cubic-bezier(0.18, 0.8, 0.22, 1) both 320ms;
 }
 
@@ -656,6 +661,18 @@ figure:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes soft-appear {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
   }
 }
 

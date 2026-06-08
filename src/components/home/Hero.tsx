@@ -17,7 +17,7 @@ export function Hero() {
       </video>
       <div className="hero-video-overlay" />
       <div className="hero-grid relative mx-auto flex min-h-screen max-w-7xl items-center px-5 pb-16 pt-28 sm:px-8 lg:pt-24">
-        <div className="max-w-3xl">
+        <div className="hero-copy max-w-3xl">
           <p className="section-label hero-label">Luxury florist in Karawaci</p>
           <h1 className="mt-5 max-w-4xl font-serif text-6xl leading-[0.92] text-[var(--foreground)] sm:text-7xl lg:text-8xl">
             <span className="block">Love Expressed</span>
