@@ -647,7 +647,8 @@ a {
   animation: route-section-rise 1080ms cubic-bezier(0.18, 0.8, 0.22, 1) both 80ms;
 }
 
-.page-motion > .section-wrap:first-child:not(.hero-shell) {
+.page-motion > .section-wrap:first-child:not(.hero-shell),
+.page-motion > .route-transition > .section-wrap:first-child:not(.hero-shell) {
   padding-top: clamp(9.5rem, 13vh, 12rem);
 }
 
@@ -823,8 +824,9 @@ figure:hover {
 }
 
 @media (max-width: 767px) {
-  .page-motion > .section-wrap:first-child:not(.hero-shell) {
-    padding-top: 12.25rem;
+  .page-motion > .section-wrap:first-child:not(.hero-shell),
+  .page-motion > .route-transition > .section-wrap:first-child:not(.hero-shell) {
+    padding-top: 14.25rem;
   }
 
   .site-header nav {
@@ -1101,11 +1103,13 @@ body.mobile-menu-open {
     align-items: center;
     justify-content: space-between;
     padding: 1.15rem 1.35rem 0.7rem 1.05rem;
+    margin-left: 0.75rem;
   }
 
   .df-mobile-menu-head img {
-    width: 7.9rem;
+    width: 6rem;
     height: auto;
+    
   }
 
   .df-mobile-menu-close {
@@ -1185,5 +1189,22 @@ body.mobile-menu-open {
   .df-mobile-menu-backdrop,
   .df-mobile-menu-panel {
     display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header nav {
+    position: relative;
+    min-height: 8.45rem;
+  }
+
+  .site-header .nav-brand-group {
+    position: absolute;
+    left: 50%;
+    top: 0.72rem;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    width: max-content;
   }
 }
