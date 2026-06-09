@@ -78,7 +78,7 @@ export function Navbar() {
             </Link>
             <div className="nav-editorial-mobile" aria-hidden="true">
               <span className="nav-editorial-line" />
-              <span>D&apos;FLEURISE FLORIST &middot; EST. TANGERANG</span>
+              <span>&nbsp;D&apos;FLEURISE FLORIST &middot; EST. TANGERANG</span>
             </div>
           </div>
           <div className="hidden items-center gap-8 lg:flex">
