@@ -18,6 +18,7 @@ export function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAtHomeTop, setIsAtHomeTop] = useState(isHome);
 
   useEffect(() => {
     document.body.classList.toggle("mobile-menu-open", isMobileMenuOpen);
@@ -41,9 +42,24 @@ export function Navbar() {
     return () => window.cancelAnimationFrame(frameId);
   }, [pathname]);
 
+  useEffect(() => {
+    const updateHeaderState = () => {
+      setIsAtHomeTop(pathname === "/" && window.scrollY <= 24);
+    };
+
+    updateHeaderState();
+    window.addEventListener("scroll", updateHeaderState, { passive: true });
+    window.addEventListener("resize", updateHeaderState, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", updateHeaderState);
+      window.removeEventListener("resize", updateHeaderState);
+    };
+  }, [pathname]);
+
   return (
     <>
-      <header className={`site-header ${isHome ? "home-header" : "is-solid"}`}>
+      <header className={`site-header ${isHome ? "home-header" : "is-solid"} ${isAtHomeTop ? "is-home-top" : "is-scrolled"}`}>
         <div className="site-header-bg" aria-hidden="true" />
         <div className="nav-editorial hidden xl:flex" aria-hidden="true">
           <span className="nav-editorial-line" />
@@ -51,7 +67,7 @@ export function Navbar() {
         </div>
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-8 py-2 sm:px-12">
           <div className="nav-brand-group flex shrink-0 items-center gap-7">
-            <Link href="/" className="shrink-0" aria-label="d'fleurise home" style={{ marginLeft: "100px" }}>
+            <Link href="/" className="shrink-0" aria-label="d'fleurise home">
               <Image
                 src="/assets/logo_df.png"
                 alt="d'fleurise logo"
