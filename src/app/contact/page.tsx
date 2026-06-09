@@ -1,46 +1,36 @@
-import { MediaImage } from "@/components/site/MediaImage";
-import { instagram, location, phoneNumber, whatsappUrl } from "@/data/products";
+import { ContactWhatsAppForm } from "@/components/site/ContactWhatsAppForm";
 
 export default function ContactPage() {
   return (
-    <section className="section-wrap grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-      <div>
-        <p className="section-label">Contact</p>
-        <h1 className="section-title mt-4">Let&apos;s Create Your Bouquet</h1>
-        <p className="mt-6 text-lg leading-8 text-[var(--muted)]">
-          Share your occasion, preferred colors, budget, and delivery timing. Our
-          florist will help recommend the sweetest arrangement through WhatsApp.
-        </p>
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <a className="btn-primary" href={whatsappUrl} target="_blank" rel="noreferrer">
-            Order via WhatsApp
-          </a>
-          <a className="btn-secondary" href="https://www.instagram.com/dfleurise.id" target="_blank" rel="noreferrer">
-            Visit Instagram
-          </a>
-        </div>
-      </div>
-      <div className="border border-[var(--border)] bg-white p-7 sm:p-10">
-        <p className="section-label">Information</p>
-        <div className="mt-7 grid gap-5">
-          <div className="border-b border-[var(--border)] pb-5">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--rose)]">Location</p>
-            <p className="mt-2 font-serif text-3xl">{location}</p>
-          </div>
-          <div className="border-b border-[var(--border)] pb-5">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--rose)]">Phone</p>
-            <p className="mt-2 font-serif text-3xl">{phoneNumber}</p>
-          </div>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--rose)]">Instagram</p>
-            <p className="mt-2 font-serif text-3xl">{instagram}</p>
+    <section className="section-wrap">
+      <div className="grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+        <div>
+          <p className="section-label">Contact</p>
+          <h1 className="section-title mt-5">Start Your Floral Request</h1>
+          <p className="mt-7 max-w-xl text-lg leading-8 text-[var(--muted)]">
+            Share your details and preferred bouquet category. Our florist will continue the conversation
+            through WhatsApp with a personalized recommendation.
+          </p>
+
+          <div className="mt-10 border-l border-[var(--pink-soft)] pl-5">
+            <p className="font-serif text-3xl text-[var(--foreground)]">Karawaci, Tangerang</p>
+            <p className="mt-3 leading-7 text-[var(--muted)]">
+              Luxury handcrafted bouquets for fresh flowers, artificial arrangements, wedding florals,
+              and custom gifts.
+            </p>
           </div>
         </div>
-        <div className="relative mt-10 h-80">
-          <MediaImage
-            src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=1400&q=85"
-            alt="Korean florist bouquet wrapping"
-          />
+
+        <div className="relative border border-[var(--border)] bg-white/72 p-6 shadow-[0_28px_70px_rgba(216,107,131,0.1)] backdrop-blur sm:p-8 lg:p-10">
+          <div className="pointer-events-none absolute right-6 top-6 h-16 w-16 border-r border-t border-[var(--pink-soft)] opacity-60" />
+          <p className="section-label">Order With Love</p>
+          <h2 className="mt-4 font-serif text-4xl leading-tight text-[var(--foreground)] sm:text-5xl">
+            Tell Us What You Need
+          </h2>
+          <p className="mb-8 mt-4 leading-7 text-[var(--muted)]">
+            {/* Your message will be formatted automatically and sent to d&apos;fleurise via WhatsApp. */}
+          </p>
+          <ContactWhatsAppForm />
         </div>
       </div>
     </section>
