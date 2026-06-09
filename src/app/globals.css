@@ -114,8 +114,8 @@ body::before {
   gap: 0.5rem;   /* atur kedekatannya di sini (misal: 0.5rem atau 8px) */
   
   color: rgba(86, 52, 60, 0.74);
-  font-size: 0.42rem;
-  font-weight: 800;
+  font-size: 0.35rem;
+  font-weight: 1000;
   letter-spacing: 0.6em;
   text-transform: uppercase;
   text-shadow: 0 2px 14px rgba(255, 250, 248, 0.86);
@@ -128,15 +128,15 @@ body::before {
 
 .nav-editorial span:last-child::after {
   content: "D'FLEURISE FLORIST \00B7  EST. TANGERANG";
-  font-size: 0.55rem !important; 
+  font-size: 0.525rem !important;
 }
 
 .nav-editorial-line {
   display: block;
   flex-shrink: 0; /* Mencegah garis gepeng/menyusut */
-  margin-right: -8.5rem !important; /* Menghilangkan efek 'space' bawaan dari letter-spacing container */
-  width: 1.6rem !important;
-  height: 2px !important;
+  margin-right: -8rem; /* Menghilangkan efek 'space' bawaan dari letter-spacing container */
+  width: 1.8rem !important; /* Atur panjang garis sesuai kebutuhan */
+  height: 2.05px !important; /* Atur ketebalan garis sesuai kebutuhan */
   background: linear-gradient(90deg, var(--pink), var(--rose));
   box-shadow: 0 0 18px rgba(239, 120, 150, 0.34);
 }
@@ -915,7 +915,7 @@ figure:hover {
   }
 
   .nav-editorial-mobile .nav-editorial-line {
-    width: 1.75rem;
+    width: 1.65rem;
     flex: 0 0 1.75rem;
     margin-right: 0;
   }
@@ -1287,7 +1287,7 @@ body.mobile-menu-open {
   }
 }
 
-@media (min-width: 1280px) and (max-width: 1535px) {
+@media (min-width: 1280px) and (max-width: 1650px) {
   .site-header > nav {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -1306,13 +1306,13 @@ body.mobile-menu-open {
   }
 
   .site-header > .nav-editorial .nav-editorial-line {
-    width: 1.5rem !important;
-    height: 2.15px !important;
-    margin-right: -7.5rem;
+    width: 1.8rem !important;
+    height: 1.6px !important;
+    margin-right: -6.5rem;
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 1651px) {
   .site-header > .nav-editorial {
     max-width: none;
   }
