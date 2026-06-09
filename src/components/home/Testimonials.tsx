@@ -1,6 +1,6 @@
 const testimonials = [
   ["The bouquet looked even softer and more premium in person. Perfect for my sister's birthday.", "Michelle"],
-  ["Beautiful wrapping, fast response, and the colors were exactly what I imagined.", "Stephanie"],
+  ["Beautiful wrapping, fast response, and the colors were exactly what I imagined.", "Stefanie"],
   ["d'fleurise made our anniversary flowers feel personal and very elegant.", "Melissa"],
 ];
 

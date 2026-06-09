@@ -16,7 +16,7 @@ export default function Home() {
       <BrandStatement />
       <CategoryShowcase />
       <OccasionGrid />
-      <CatalogPreview />
+      {/* <CatalogPreview /> */}
       <PremiumSeries />
       <WeddingFeature />
       <section className="section-wrap">

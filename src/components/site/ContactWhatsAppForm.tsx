@@ -20,7 +20,7 @@ export function ContactWhatsAppForm() {
       `Nama Lengkap: ${fullName}`,
       `Nomor HP: ${phone}`,
       `Kategori: ${category}`,
-      `Message: ${message}`,
+      `Notes: ${message}`,
     ].join("\n");
 
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`, "_blank", "noreferrer");
@@ -85,7 +85,7 @@ export function ContactWhatsAppForm() {
 
       <div className="grid gap-2">
         <label htmlFor="message" className="text-xs font-extrabold uppercase tracking-[0.22em] text-[var(--rose)]">
-          Message
+        Notes
         </label>
         <textarea
           id="message"
