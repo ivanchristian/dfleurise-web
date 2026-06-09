@@ -51,12 +51,12 @@ export function Navbar() {
         </div>
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-8 py-2 sm:px-12">
           <div className="nav-brand-group flex shrink-0 items-center gap-7">
-            <Link href="/" className="shrink-0" aria-label="d'fleurise home">
+            <Link href="/" className="shrink-0" aria-label="d'fleurise home" style={{ marginLeft: "100px" }}>
               <Image
                 src="/assets/logo_df.png"
                 alt="d'fleurise logo"
-                width={180}
-                height={60}
+                width={100}
+                height={20}
                 priority
               />
             </Link>
