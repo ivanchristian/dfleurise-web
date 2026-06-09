@@ -23,7 +23,7 @@ export function Footer() {
 
   return (
     <footer className="site-footer border-t border-[var(--border)] bg-white/60">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.2fr_0.75fr_0.65fr_0.8fr]">
+      <div className="footer-grid mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.2fr_0.75fr_0.65fr_0.8fr]">
         <div>
           <Image
             src="/assets/logo_df.png"
@@ -40,7 +40,7 @@ export function Footer() {
           </a>
         </div>
 
-        <div>
+        <div className="footer-visit">
           <p className="section-label">Visit</p>
           <div className="mt-5 space-y-3 text-sm text-[var(--muted)] ">
             <p>Karawaci, Tangerang, Indonesia</p>
@@ -49,7 +49,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="footer-shop">
           <p className="section-label">Shop</p>
           <div className="mt-5 grid gap-3">
             {shopLinks.map(([label, href]) => (
@@ -60,7 +60,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="footer-info">
           <p className="section-label">Info</p>
           <div className="mt-5 grid gap-3">
             {infoLinks.map(([label, href]) => (
