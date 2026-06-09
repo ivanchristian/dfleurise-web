@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { whatsappUrl } from "@/data/products";
 
 const navItems = [
@@ -17,6 +18,24 @@ const navItems = [
 export function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle("mobile-menu-open", isMobileMenuOpen);
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.classList.remove("mobile-menu-open");
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header className={`site-header ${isHome ? "home-header" : "is-solid"}`}>
@@ -29,7 +48,7 @@ export function Navbar() {
         <div className="nav-brand-group flex shrink-0 items-center gap-7">
           <Link href="/" className="shrink-0" aria-label="d'fleurise home">
             <Image
-              src="/assets/logo.png"
+              src="/assets/logo_df.png"
               alt="d'fleurise logo"
               width={180}
               height={60}
@@ -55,14 +74,55 @@ export function Navbar() {
         <a className="btn-primary nav-cta hidden lg:inline-flex" href={whatsappUrl} target="_blank" rel="noreferrer">
           Order via WhatsApp
         </a>
+        <button
+          className="df-mobile-menu-trigger"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setIsMobileMenuOpen(true)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </nav>
-      <div className="flex gap-5 overflow-x-auto px-5 pb-3 text-sm text-[var(--muted)] sm:px-8 lg:hidden">
-        {navItems.map(([label, href]) => (
-          <Link key={href} href={href} className="shrink-0">
-            {label}
-          </Link>
-        ))}
-      </div>
+      <button
+        className={`df-mobile-menu-backdrop ${isMobileMenuOpen ? "is-open" : ""}`}
+        type="button"
+        aria-label="Close navigation menu"
+        onClick={() => setIsMobileMenuOpen(false)}
+      />
+      <aside
+        id="mobile-menu"
+        className={`df-mobile-menu-panel ${isMobileMenuOpen ? "is-open" : ""}`}
+        aria-hidden={!isMobileMenuOpen}
+      >
+        <div className="df-mobile-menu-head">
+          <Image src="/assets/logo_df.png" alt="d'fleurise logo" width={170} height={58} priority />
+          <button
+            className="df-mobile-menu-close"
+            type="button"
+            aria-label="Close navigation menu"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <span />
+            <span />
+          </button>
+        </div>
+        <nav className="df-mobile-menu-nav" aria-label="Mobile navigation">
+          {navItems.map(([label, href], index) => (
+            <Link key={href} href={href} onClick={() => setIsMobileMenuOpen(false)}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{label}</strong>
+            </Link>
+          ))}
+        </nav>
+        <div className="df-mobile-menu-foot">
+          <span>EST. 2022</span>
+          <span>TANGERANG</span>
+        </div>
+      </aside>
     </header>
   );
 }
