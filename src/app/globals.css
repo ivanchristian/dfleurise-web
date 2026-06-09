@@ -824,6 +824,45 @@ figure:hover {
 }
 
 @media (max-width: 767px) {
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1.15rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .site-footer .footer-grid > div:first-child,
+  .site-footer .footer-info {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer .footer-visit,
+  .site-footer .footer-shop {
+    min-width: 0;
+  }
+
+  .site-footer .section-label {
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+  }
+
+  .site-footer p,
+  .site-footer a {
+    font-size: 0.86rem;
+    line-height: 1.65;
+  }
+
+  .site-footer .btn-primary {
+    min-height: 3rem;
+    padding-inline: 1rem;
+    font-size: 0.76rem;
+  }
+
+  .site-footer .footer-info > div {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem 1rem;
+  }
+
   .page-motion > .section-wrap:first-child:not(.hero-shell),
   .page-motion > .route-transition > .section-wrap:first-child:not(.hero-shell) {
     padding-top: 14.25rem;
