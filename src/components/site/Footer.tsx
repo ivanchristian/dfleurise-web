@@ -1,38 +1,60 @@
+import Image from "next/image";
 import Link from "next/link";
-import { instagram, location, phoneNumber } from "@/data/products";
+import { whatsappUrl } from "@/data/products";
+
+const quickLinks = [
+  ["Home", "/"],
+  ["Collections", "/collections"],
+  ["Occasions", "/occasions"],
+  ["About", "/about"],
+  ["Contact", "/contact"],
+];
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="border-t border-[var(--border)] bg-white/70">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.2fr_1fr_1fr]">
+    <footer className="site-footer border-t border-[var(--border)] bg-white/60">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.15fr_0.85fr_0.85fr]">
         <div>
-          <p className="font-serif text-4xl text-[var(--foreground)]">d&apos;fleurise</p>
-          <p className="mt-3 max-w-sm text-sm leading-7 text-[var(--muted)]">
-            Luxury handcrafted bouquets from Karawaci, Tangerang, created for love,
-            milestones, and meaningful memories.
+          <Image
+            src="/assets/logo_df.png"
+            alt="d'fleurise florist logo"
+            width={170}
+            height={64}
+            className="h-auto w-44"
+          />
+          <p className="mt-6 max-w-sm leading-7 text-[var(--muted)]">
+            Luxury handcrafted bouquets designed for love, celebration, and meaningful moments.
           </p>
+          <a className="btn-primary mt-7" href={whatsappUrl} target="_blank" rel="noreferrer">
+            Order via WhatsApp
+          </a>
         </div>
+
         <div>
-          <p className="section-label">Contact</p>
-          <div className="mt-4 space-y-2 text-sm text-[var(--muted)]">
-            <p>{location}</p>
-            <p>{phoneNumber}</p>
-            <p>{instagram}</p>
+          <p className="section-label">Visit</p>
+          <div className="mt-5 space-y-3 text-[var(--muted)]">
+            <p>Karawaci, Tangerang, Indonesia</p>
+            <p>+62 858 1791 9717</p>
+            <p>@dfleurise.id</p>
           </div>
         </div>
+
         <div>
           <p className="section-label">Quick Links</p>
-          <div className="mt-4 grid gap-2 text-sm text-[var(--muted)]">
-            <Link href="/collections">Collections</Link>
-            <Link href="/wedding">Wedding</Link>
-            <Link href="/occasions">Occasions</Link>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
+          <div className="mt-5 grid gap-3">
+            {quickLinks.map(([label, href]) => (
+              <Link key={href} href={href} className="text-[var(--muted)] hover:text-[var(--rose)]">
+                {label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
-      <div className="border-t border-[var(--border)] px-5 py-5 text-center text-xs text-[var(--muted)]">
-        Copyright 2026 d&apos;fleurise.id. All rights reserved.
+
+      <div className="border-t border-[var(--border)] px-5 py-5 text-center text-xs font-semibold tracking-[0.18em] text-[var(--muted)] sm:px-8">
+        © {currentYear} &nbsp; D&apos;fleurise Florist · All Rights Reserved
       </div>
     </footer>
   );

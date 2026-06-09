@@ -13,6 +13,7 @@ const revealSelector = [
   ".btn-primary",
   ".btn-secondary",
   ".pill",
+  ".site-footer",
 ].join(",");
 
 export function ScrollReveal() {
