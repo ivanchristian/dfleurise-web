@@ -5,7 +5,7 @@ export default function ContactPage() {
     <section className="section-wrap">
       <div className="grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
         <div>
-          <p className="section-label">Contact</p>
+          <p className="section-label">Contact Us</p>
           <h1 className="section-title mt-5">Start Your Floral Request</h1>
           <p className="mt-7 max-w-xl text-lg leading-8 text-[var(--muted)]">
             Share your details and preferred bouquet category. Our florist will continue the conversation
