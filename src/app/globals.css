@@ -338,7 +338,7 @@ a {
 
 .section-title {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: clamp(2.8rem, 6vw, 5.9rem);
+  font-size: clamp(2.4rem, 5vw, 5rem);
   line-height: 0.98;
   color: var(--foreground);
   text-wrap: balance;
@@ -457,12 +457,12 @@ a {
   position: relative;
   overflow: hidden;
   display: inline-flex;
-  min-height: 3.25rem;
+  min-height: 3rem;
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  padding: 0.9rem 1.35rem;
-  font-size: 0.85rem;
+  padding: 0.9rem 1.15rem;
+  font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
